@@ -1,0 +1,21 @@
+﻿ora_id,tanulo_id,oktato_id,datum,idopont,ora_tipus,helyszin
+1,2,3,2025-05-14,10:30,gyakorlati,Tanterem B
+2,6,1,2025-05-14,14:00,gyakorlati,Tanterem A
+3,1,6,2025-05-14,15:00,elméleti,Tanterem A
+4,5,3,2025-05-14,8:30,gyakorlati,Pálya 3
+5,9,8,2025-05-14,8:30,gyakorlati,Pálya 3
+6,7,10,2025-05-14,18:30,elméleti,Pálya 3
+7,17,7,2025-05-14,18:45,gyakorlati,Szimulátor 1
+8,17,1,2025-05-14,18:15,elméleti,Pálya 3
+9,9,3,2025-05-14,13:30,gyakorlati,Tanterem A
+10,15,7,2025-05-14,17:30,elméleti,Tanterem B
+11,19,2,2025-05-14,18:30,elméleti,Szimulátor 1
+12,8,7,2025-05-14,16:00,gyakorlati,Pálya 3
+13,8,9,2025-05-14,15:15,elméleti,Pálya 3
+14,13,8,2025-05-14,8:00,elméleti,Pálya 3
+15,7,1,2025-05-14,12:30,gyakorlati,Pálya 3
+16,14,1,2025-05-14,9:00,gyakorlati,Tanterem A
+17,3,7,2025-05-14,8:45,elméleti,Pálya 3
+18,1,6,2025-05-14,12:45,elméleti,Szimulátor 1
+19,14,6,2025-05-14,8:15,gyakorlati,Tanterem A
+20,5,6,2025-05-14,18:15,elméleti,Tanterem A
