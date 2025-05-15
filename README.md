@@ -63,6 +63,12 @@ Kapcsolatok:
 
 ## 🚀 Futtatás
 
+A projekt a következő környezetben készült:
+- **SQL Server Express 2019**
+- **ODBC Driver 17 for SQL Server**
+
+
+
 A `adatbazisfeladat_v1.ipynb` Jupyter notebook-ot kell futtatni. A projekthez szükséges:
 - Python 3.9+
 - Könyvtárak: `pandas`, `pyodbc`
@@ -71,11 +77,9 @@ A `adatbazisfeladat_v1.ipynb` Jupyter notebook-ot kell futtatni. A projekthez sz
 
 ## 👥 Csoporttagok
 
-- Név 1 (NEPTUN kód)
-- Név 2 (NEPTUN kód)
-- Név 3 (NEPTUN kód)
-
-*(Töltsd ki a megfelelő nevekkel a beadás előtt.)*
+- Bagi Bereniké (IMN7DS)
+- Dobos Kamilla (DEP39C)
+- Nagy Boldizsár (JC5KSV)
 
 ---
 
