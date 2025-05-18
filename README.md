@@ -1,114 +1,93 @@
 
-# Autósiskola Adatbázis – SQL + Python projekt
+# Autósiskola Adatbázis – SQL + Python Projekt
 
-Ez a projekt az SQL és Python összekapcsolására épül, egy fiktív autósiskola adatkezelési folyamatait modellezve.
-
-## 📌 Projektfeladat (3. opció)
-
-**SQL vagy NoSQL adatbázis létrehozása** (min. 4 tábla) adatok importálásával, majd kapcsolódás Pythonból, és legalább:
-- 5 lekérdezés
-- 5 CRUD művelet
+Ez a projekt egy autósiskola működését modellezi SQL-adatbázis segítségével, Python programozással kiegészítve. A cél, hogy a tanult adatbáziskezelési elveket (lekérdezések, kapcsolatok, CRUD-műveletek) egy valósághoz közeli példán keresztül alkalmazzuk.
 
 ---
 
-## 🗃️ Adatbázis leírása
+## 🗂️ Táblák és Kapcsolatok
 
-Az adatbázis egy autósiskola működését modellezi az alábbi táblákkal:
+Az adatbázis az alábbi táblákat tartalmazza:
 
-| Tábla       | Leírás |
-|-------------|--------|
-| `Students`  | Tanulók adatai (név, születési dátum, elérhetőségek, jelentkezés dátuma) |
-| `Instructors` | Oktatók adatai (név, jogosítvány típusa, elérhetőség, kezdés) |
-| `Lessons`   | Órák adatai (tanuló, oktató, időpont, típus, helyszín) |
-| `Vehicles`  | Oktatókhoz rendelt járművek (rendszám, típus, évjárat, műszaki) |
-| `Exams`     | Vizsgaeredmények (tanuló, vizsga típusa, eredmény) |
+| Tábla         | Leírás |
+|---------------|--------|
+| `Students`    | Tanulók adatai |
+| `Instructors` | Oktatók adatai |
+| `Lessons`     | Órák (tanuló–oktató kapcsolatok) |
+| `Vehicles`    | Oktató járművek |
+| `Exams`       | Vizsgaeredmények |
 
-Kapcsolatok:
-- `Lessons.tanulo_id` → `Students`
-- `Lessons.oktato_id` → `Instructors`
-- `Vehicles.oktato_id` → `Instructors`
-- `Exams.tanulo_id` → `Students`
+### 🔗 Kapcsolatok:
 
----
-
-## ⚙️ Az adatbázis létrehozása
-
-- Az adatokat `.csv` fájlokból importáltuk (`pandas` segítségével).
-- Az adatbázist `sqlite3` és `pyodbc` modullal kezeltük.
-- Az SQL parancsokat Python kódon keresztül futtattuk.
-- A tábla-definíciók megfelelnek a 3. normálformának (3NF).
-- Adatbázismotor: **SQL Server Express 2019**
-- ODBC Driver: **ODBC Driver 17 for SQL Server**
+- `Lessons.tanulo_id` → `Students.tanulo_id`
+- `Lessons.oktato_id` → `Instructors.oktato_id`
+- `Vehicles.oktato_id` → `Instructors.oktato_id`
+- `Exams.tanulo_id` → `Students.tanulo_id`
 
 ---
 
-## 🔍 Lekérdezések (példák)
+## ⚙️ Rendszerkövetelmények
 
-- Tanulók születési dátum szerint rendezve
-- Oktatók tanulóinak száma `GROUP BY`-val
-- `JOIN` a tanulók és oktatók között
-- `HAVING` szűrés legalább 2 tanulós oktatókra
-- `ROLLUP` összesítés óra típus szerint
-- `RANK()` használata születési sorrendhez
-
----
-
-## ✏️ CRUD-műveletek (példák)
-
-- Új tanuló beszúrása (`INSERT`)
-- Tanuló adatok lekérdezése (`SELECT`)
-- Cím módosítása (`UPDATE`)
-- Törlés (`DELETE`)
-- Feltételes beszúrás `IF EXISTS` vizsgálattal
+- Python 3.9+
+- `pandas`, `pyodbc`
+- SQL Server Express 2019
+- ODBC Driver 17 for SQL Server
+- Jupyter Notebook (opcionális)
 
 ---
 
-## 👥 Csoporttagok
+## 🛠️ Adatbázis Létrehozása
 
-- Név 1 (NEPTUN kód)
-- Név 2 (NEPTUN kód)
-- Név 3 (NEPTUN kód)
-
----
-
-## 🧩 ER Diagram és Dokumentáció
-
-*(A diagram.png-t töltsd fel ide, hogy megjelenjen.)*
+1. `.csv` fájlok betöltése (tanulók, oktatók, órák, vizsgák, járművek)
+2. SQL-adatbázis struktúrájának létrehozása Pythonból (CREATE TABLE)
+3. Adatok feltöltése `executemany()` használatával
+4. Kapcsolódás SQL Serverhez `pyodbc` segítségével
 
 ---
 
-### 📋 Kényszerek összefoglalva
+## 🔍 Lekérdezések
 
-- **PRIMARY KEY**: minden táblában van elsődleges kulcs (pl. `tanulo_id`, `oktato_id`, stb.)
-- **FOREIGN KEY**:
-  - `Lessons.tanulo_id` → `Students`
-  - `Lessons.oktato_id` → `Instructors`
-  - `Vehicles.oktato_id` → `Instructors`
-  - `Exams.tanulo_id` → `Students`
-- **CHECK**:
-  - `Instructors.jogositvany_tipus IN ('A', 'B', 'C', 'D')`
-  - `Lessons.ora_tipus IN ('elméleti', 'gyakorlati')`
-  - `Exams.eredmeny IN ('sikeres', 'sikertelen')`
-  - `Vehicles.evjarat >= 1990`
-- **NOT NULL**: kulcsmezők, dátumok, típusok
-- **UNIQUE**: `Vehicles.rendszam`
+1. Tanulók születési dátum szerint
+2. Oktatók tanulóinak száma (`GROUP BY`)
+3. Tanuló–oktató párosítások (`JOIN`)
+4. Legalább 2 tanulós oktatók (`HAVING`)
+5. Óraszám típus szerint (`ROLLUP`)
+6. Tanulók születési rangsora (`RANK()`)
 
 ---
 
-### 🗃️ Táblák rövid leírása
+## ✏️ CRUD-műveletek
 
-- **Students**: A tanulók alapadatait tartalmazza (név, születési dátum, lakcím, elérhetőségek, jelentkezési dátum).
-- **Instructors**: Az oktatók neve, jogosítványtípusa, munkaviszony kezdete és elérhetősége.
-- **Lessons**: Tanuló és oktató közötti órák (dátum, időpont, típus, helyszín).
-- **Vehicles**: Oktatókhoz tartozó oktató járművek (rendszám, típus, évjárat, műszaki).
-- **Exams**: Vizsgaeredmények (tanuló, típus, dátum, eredmény).
+- **Create:** új tanuló beszúrása
+- **Read:** adatok lekérdezése `SELECT`
+- **Update:** cím módosítása
+- **Delete:** tanuló törlése
+- **Feltételes beszúrás:** `IF EXISTS` vizsgálattal
 
 ---
 
-### 🛠️ Adatbázis létrehozásának módja
+## 🧩 ER Diagram
 
-- Az adatokat `.csv` fájlokból töltöttük be.
-- A programozási környezet: **Python + pandas + pyodbc**
-- Adatbázis motor: **SQL Server Express 2019**
-- Kapcsolódás: **ODBC Driver 17 for SQL Server**
-- Az adatbázis létrehozása, feltöltése és lekérdezése Jupyter notebookban történt.
+> A teljes adatmodell vizuálisan:
+
+![ER Diagram](diagram.png)
+
+---
+
+## 📋 Kényszerek összefoglalása
+
+- `PRIMARY KEY`: minden táblán
+- `FOREIGN KEY`: megfelelő kapcsolatok a táblák között
+- `CHECK`: értékkorlátok pl. jogosítvány típus, óra típus
+- `NOT NULL`: kötelező mezők
+- `UNIQUE`: jármű rendszám
+
+---
+
+## 👤 Csoporttag(ok)
+
+- Név 1 (NEPTUN)
+- Név 2 (NEPTUN)
+- Név 3 (NEPTUN)
+
+*(A tényleges beadás előtt kérlek töltsd ki!)*
