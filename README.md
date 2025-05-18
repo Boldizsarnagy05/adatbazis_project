@@ -86,8 +86,6 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ## 👤 Csoporttag(ok)
 
-- Név 1 (NEPTUN)
-- Név 2 (NEPTUN)
-- Név 3 (NEPTUN)
-
-*(A tényleges beadás előtt kérlek töltsd ki!)*
+- Bagi Bereniké (IMN7DS)
+- Dobos Kamilla (DEP39C)
+- Nagy Boldizsár (JC5KSV)
