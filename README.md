@@ -47,22 +47,26 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ## 🔍 Lekérdezések
 
+### 🔍 Lekérdezések
+
 1. Tanulók születési dátum szerint
-2. Oktatók tanulóinak száma (`GROUP BY`)
-3. Tanuló–oktató párosítások (`JOIN`)
-4. Legalább 2 tanulós oktatók (`HAVING`)
-5. Óraszám típus szerint (`ROLLUP`)
-6. Tanulók születési rangsora (`RANK()`)
+2. 1990 után született tanulók
+3. Tanuló–oktató párosítások
+4. Oktatók tanulóinak száma
+5. Legalább 2 tanulós oktatók
+6. Óraszám típus szerint
+7. Oktatónkénti születési rangsor
+
 
 ---
 
 ## ✏️ CRUD-műveletek
 
 - **Create:** új tanuló beszúrása
-- **Read:** adatok lekérdezése `SELECT`
+- **Read:** adatok lekérdezése
 - **Update:** cím módosítása
 - **Delete:** tanuló törlése
-- **Feltételes beszúrás:** `IF EXISTS` vizsgálattal
+- **Feltételes beszúrás:** (`IF EXISTS`)
 
 ---
 
