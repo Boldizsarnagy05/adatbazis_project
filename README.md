@@ -5,7 +5,7 @@ Ez a projekt egy autósiskola működését modellezi SQL-adatbázis segítség�
 
 ---
 
-## 🗂️ Táblák és Kapcsolatok
+##  Táblák és Kapcsolatok
 
 Az adatbázis az alábbi táblákat tartalmazza:
 
@@ -17,7 +17,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 | `Vehicles`    | Oktató járművek |
 | `Exams`       | Vizsgaeredmények |
 
-### 🔗 Kapcsolatok:
+###  Kapcsolatok:
 
 - `Lessons.tanulo_id` → `Students.tanulo_id`
 - `Lessons.oktato_id` → `Instructors.oktato_id`
@@ -26,7 +26,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## ⚙️ Rendszerkövetelmények
+##  Rendszerkövetelmények
 
 - Python 3.9+
 - `pandas`, `pyodbc`
@@ -36,7 +36,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 🛠️ Adatbázis Létrehozása
+##  Adatbázis Létrehozása
 
 1. `.csv` fájlok betöltése (tanulók, oktatók, órák, vizsgák, járművek)
 2. SQL-adatbázis struktúrájának létrehozása Pythonból (CREATE TABLE)
@@ -45,9 +45,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 🔍 Lekérdezések
-
-### 🔍 Lekérdezések
+##  Lekérdezések
 
 1. Tanulók születési dátum szerint
 2. 1990 után született tanulók
@@ -55,12 +53,11 @@ Az adatbázis az alábbi táblákat tartalmazza:
 4. Oktatók tanulóinak száma
 5. Legalább 2 tanulós oktatók
 6. Óraszám típus szerint
-7. Oktatónkénti születési rangsor
-
+7. Oktatókénti születési rangsor
 
 ---
 
-## ✏️ CRUD-műveletek
+##  CRUD-műveletek
 
 - **Create:** új tanuló beszúrása
 - **Read:** adatok lekérdezése
@@ -70,7 +67,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 🧩 ER Diagram
+##  ER Diagram
 
 > A teljes adatmodell vizuálisan:
 
@@ -78,7 +75,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 📋 Kényszerek összefoglalása
+##  Kényszerek összefoglalása
 
 - `PRIMARY KEY`: minden táblán
 - `FOREIGN KEY`: megfelelő kapcsolatok a táblák között
@@ -88,8 +85,25 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 👤 Csoporttagok
+##  Csoporttagok
 
 - Bagi Bereniké (IMN7DS)
 - Dobos Kamilla (DEP39C)
 - Nagy Boldizsár (JC5KSV)
+
+---
+
+## 📁 Repository tartalma
+
+A repository az alábbi fájlokat tartalmazza:
+
+- `adatbazisfeladat_v1.ipynb` – korábbi notebook verzió
+- `adatbazisfeladat_v2.ipynb` – továbbfejlesztett verzió
+- `adatbazisfeladat_v3.ipynb` – ✅ **végleges notebook verzió (leadott script)**
+- `students.csv` – tanulói adatok
+- `instructors.csv` – oktatói adatok
+- `lessons.csv` – óra adatok
+- `exams.csv` – vizsgaeredmények
+- `vehicles.csv` – járművek adatai
+- `diagram.png` – ER diagram
+- `README.md` – jelen dokumentáció
