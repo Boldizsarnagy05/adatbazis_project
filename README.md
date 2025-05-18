@@ -93,13 +93,13 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 📁 Repository tartalma
+##  Repository tartalma
 
 A repository az alábbi fájlokat tartalmazza:
 
 - `adatbazisfeladat_v1.ipynb` – korábbi notebook verzió
 - `adatbazisfeladat_v2.ipynb` – továbbfejlesztett verzió
-- `adatbazisfeladat_v3.ipynb` – ✅ **végleges notebook verzió (leadott script)**
+- `adatbazisfeladat_v3.ipynb` – **végleges notebook verzió**
 - `students.csv` – tanulói adatok
 - `instructors.csv` – oktatói adatok
 - `lessons.csv` – óra adatok
