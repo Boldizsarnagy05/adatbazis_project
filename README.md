@@ -84,7 +84,7 @@ Az adatbázis az alábbi táblákat tartalmazza:
 
 ---
 
-## 👤 Csoporttag(ok)
+## 👤 Csoporttagok
 
 - Bagi Bereniké (IMN7DS)
 - Dobos Kamilla (DEP39C)
